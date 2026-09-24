@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --zayan-primary: #cc0864;
+  --zayan-black: #000000;
+  --zayan-white: #ffffff;
+  --zayan-dark: #111111;
+  --zayan-gray: #6b7280;
+  --zayan-light: #faf8fa;
+  --zayan-border: #ece7eb;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #080808;
+  color: white;
+  font-family: var(--font-manrope), sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--zayan-primary);
+  color: white;
+}
+
+.zayan-gradient {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(204, 8, 100, 0.14),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #080808 0%,
+      #0b090b 50%,
+      #080808 100%
+    );
+}
+
+.zayan-text-gradient {
+  background: linear-gradient(90deg, #cc0864, #f23d8c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.zayan-grid {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.zayan-shadow {
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.12),
+    0 10px 30px rgba(204, 8, 100, 0.08);
+}
+
+.zayan-card-shadow {
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.07);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
 }
